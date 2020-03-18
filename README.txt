@@ -7,3 +7,4 @@ Interpretable Bike Flow Prediction(IBFP)
    https://outreach.didichuxing.com/app-vue/DataList
 4. For convenience, we also provide the IBFP for DiDi.
    The code entry of the IBFP for DiDi is the /IBFPforDidi/IBFP_Didi.py. 
+   Note: you should use the preprocessing programs to form the test datasets, so that you can use the pre-train model for testing.
