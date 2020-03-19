@@ -247,6 +247,13 @@ class Decomposition(object):
 
             W = self._pgd(W, H, parameters)
 
+            result2 = minimize(lambda X: _f(W, X, parameters), H, jac=lambda X: __grad_f_H(W, X, parameters),
+
+                      bounds=bounds_H, method='L-BFGS-B', options={'maxiter': 50, 'ftol': 1e-4, 'disp': True})
+
+            H = result2.x
+            print('solve H : %s %s\nF=%f' % ("OK" if result2.success else "Fail", result2.message, result2.fun))
+
             np.save('./Wtemp%d' % iter_count, W)
 
             np.save('./Htemp%d' % iter_count, H)
